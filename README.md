@@ -1,15 +1,21 @@
-# Dockerized Python Code Execution Web Application with Kubernetes Deployment
+# Dockerized Python Code Execution Web Application with CI/CD and Kubernetes Deployment
 
-A Flask-based web application that allows users to write and execute Python code in the browser. The application is containerized using Docker, shared through Docker Hub, version-controlled with GitHub, and deployed using Kubernetes.
+## Project Overview
+This project is a Flask-based web application that allows users to write and execute Python code through a browser interface. The application is containerized using Docker, pushed to Docker Hub, managed in GitHub, automated with GitHub Actions CI/CD, and deployed using Kubernetes.
 
-## Features
-- Web-based Python code editor
-- Real-time Python code execution
-- Output display in browser
-- Dockerized deployment
-- Docker Hub image sharing
-- GitHub source code management
-- Kubernetes deployment with replicas and service exposure
+It demonstrates the integration of development and DevOps tools in a single project.
+
+---
+
+## Objectives
+- Build a web-based Python code execution platform
+- Containerize the application using Docker
+- Push and pull the Docker image using Docker Hub
+- Store and manage source code with GitHub
+- Automate Docker image build and push using GitHub Actions
+- Deploy the application using Kubernetes with replicas and service exposure
+
+---
 
 ## Tech Stack
 - Python
@@ -17,17 +23,33 @@ A Flask-based web application that allows users to write and execute Python code
 - Docker
 - Docker Hub
 - GitHub
+- GitHub Actions
 - Kubernetes
 
-## Project Structure
-- `app.py` - Flask backend
-- `requirements.txt` - Python dependencies
-- `Dockerfile` - Docker image instructions
-- `deployment.yaml` - Kubernetes deployment file
-- `service.yaml` - Kubernetes service file
+---
 
-## Run with Docker
+## Project Files
+- `app.py` – Flask backend for code execution
+- `requirements.txt` – Python dependencies
+- `Dockerfile` – Docker image build instructions
+- `deployment.yaml` – Kubernetes deployment file
+- `service.yaml` – Kubernetes service file
+- `.github/workflows/docker-image.yml` – GitHub Actions CI/CD workflow
 
-### Build Docker image
+---
+
+## Working of the Project
+1. The user opens the web application in the browser.
+2. The user writes Python code in the text area.
+3. The Flask backend receives the code through a POST request.
+4. The application executes the code and captures the output.
+5. The output is displayed back in the browser.
+
+---
+
+## Docker Implementation
+The application was containerized using Docker.
+
+### Build Docker Image
 ```bash
 docker build -t python-code-exec .
