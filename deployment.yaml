@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-code-exec
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-code-exec
+  template:
+    metadata:
+      labels:
+        app: python-code-exec
+    spec:
+      containers:
+      - name: python-code-exec
+        image: envy465/python-code-exec:latest
+        ports:
+        - containerPort: 5000
